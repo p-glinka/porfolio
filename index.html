@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Desarrollo Web & Soluciones Digitales</title>
+    
+    <!-- Meta Seguridad y Rendimiento -->
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    
+    <!-- FontAwesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Hojas de Estilo -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- BOTÓN / BARRA FLOTANTE DINÁMICA -->
+    <nav class="floating-nav" id="floatingNav">
+        <a href="#inicio" class="nav-float-btn active" title="Inicio">
+            <i class="fa-solid fa-house"></i>
+            <span class="tooltip">Inicio</span>
+        </a>
+        <a href="#servicios" class="nav-float-btn" title="Servicios">
+            <i class="fa-solid fa-layer-group"></i>
+            <span class="tooltip">Servicios</span>
+        </a>
+        <a href="#proyectos" class="nav-float-btn" title="Proyectos">
+            <i class="fa-solid fa-laptop-code"></i>
+            <span class="tooltip">Proyectos</span>
+        </a>
+        <a href="#contacto" class="nav-float-btn" title="Contacto">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span class="tooltip">Contacto</span>
+        </a>
+    </nav>
+
+    <!-- SECCIÓN HERO / INICIO -->
+    <header class="hero-section" id="inicio">
+        <div class="hero-container">
+            <span class="badge-status">
+                <span class="pulse-dot"></span> Disponible para nuevos proyectos
+            </span>
+            <h1 class="hero-title">Desarrollo Web & <span class="highlight">Soluciones Digitales</span></h1>
+            <p class="hero-desc">
+                Diseño e implementación de catálogos interactivos, menús digitales y plataformas comerciales optimizadas para conversión y velocidad.
+            </p>
+            <div class="hero-actions">
+                <a href="#proyectos" class="btn-primary">Ver Trabajos <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#contacto" class="btn-secondary">Hablemos</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECCIÓN DE SERVICIOS / SOLUCIONES -->
+    <section class="section" id="servicios">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Especialidades & Servicios</h2>
+                <p class="section-subtitle">Soluciones tecnológicas enfocadas en la experiencia de usuario y resultados.</p>
+            </div>
+            
+            <div class="cards-grid" id="servicesGrid">
+                <!-- Tarjeta 1 -->
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-store"></i></div>
+                    <h3>Menús & Catálogos Digitales</h3>
+                    <p>Sistemas rápidos con pedidos directos vía WhatsApp y sincronización ágil sin dependencias complejas.</p>
+                </div>
+                <!-- Tarjeta 2 -->
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Seguridad & Rendimiento</h3>
+                    <p>Despliegue optimizado en CDN global con certificados SSL automáticos y políticas CSP rigurosas.</p>
+                </div>
+                <!-- Tarjeta 3 -->
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+                    <h3>Diseño Responsive & PWA</h3>
+                    <p>Experiencia nativa en móviles con carga instantánea y diseño limpio adaptado a la identidad de marca.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE PROYECTOS -->
+    <section class="section bg-light" id="proyectos">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Proyectos Destacados</h2>
+                <p class="section-subtitle">Demos y aplicaciones comerciales en producción.</p>
+            </div>
+
+            <div class="cards-grid" id="projectsContainer">
+                <!-- Se puede renderizar dinámicamente con data.js -->
+                <div class="project-card">
+                    <div class="project-preview">
+                        <i class="fa-solid fa-basket-shopping project-placeholder-icon"></i>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-tag">E-Commerce / Gastronomía</span>
+                        <h3>Menú Digital Interactivo</h3>
+                        <p>Plataformas ágiles con carrito dinámico, personalización visual y enlace a WhatsApp.</p>
+                        <div class="project-links">
+                            <a href="#" class="link-btn">Ver Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CONTACTO -->
+    <section class="section" id="contacto">
+        <div class="container text-center">
+            <div class="contact-box">
+                <h2>¿Tenés una idea o proyecto en mente?</h2>
+                <p>Coordinemos una propuesta técnica adaptada a las necesidades de tu negocio.</p>
+                <a href="https://wa.me/TUNUMERO" target="_blank" rel="noopener" class="btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> Iniciar conversación
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Todos los derechos reservados. Desarrollado por Paulo Glinka.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
