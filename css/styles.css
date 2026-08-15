@@ -354,3 +354,21 @@ footer {
     font-size: 0.85rem;
     color: var(--text-muted);
 }
+
+/* ==========================================
+   AJUSTES ENLACES DE PROYECTOS DINÁMICOS
+   ========================================== */
+.project-links {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.link-github {
+    color: var(--text-muted);
+}
+
+.link-github:hover {
+    color: var(--text-title);
+}
