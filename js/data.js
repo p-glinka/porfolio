@@ -19,6 +19,15 @@ const proyectos = [
         demoUrl: "https://gestion-salud-ocupacional.glinkapaulogerman.workers.dev", 
         githubUrl: "https://github.com/p-glinka/gestion-salud-ocupacional"
     },
+     {
+        id: "Menú Digital Interactivo",
+        titulo: "Menú Digital Interactivo con Enfoque de Conversión Catálogo Operativo Digital",
+        categoria: "Gestion Gastronomia ",
+        descripcion: "Módulo que transforma el menú tradicional en un canal directo de conversión",
+        icono: "fa-user-nurse",
+        demoUrl: "porfolio-gastronomia-profesional.glinkapaulogerman.workers.dev", 
+        githubUrl: "https://github.com/p-glinka/porfolio-gastronomia-profesional"
+    },
     
     
     // Para agregar un nuevo proyecto en el futuro, solo copiás y pegás un bloque de estos aquí abajo.
