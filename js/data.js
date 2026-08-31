@@ -25,7 +25,7 @@ const proyectos = [
         categoria: "Gestion Gastronomia ",
         descripcion: "Módulo que transforma el menú tradicional en un canal directo de conversión",
         icono: "fa-user-nurse",
-        demoUrl: "porfolio-gastronomia-profesional.glinkapaulogerman.workers.dev", 
+        demoUrl: "https://porfolio-gastronomia-profesional.glinkapaulogerman.workers.dev", 
         githubUrl: "https://github.com/p-glinka/porfolio-gastronomia-profesional"
     },
     
