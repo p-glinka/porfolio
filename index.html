@@ -9,7 +9,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     
     <!-- FontAwesome para íconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
     
     <!-- Hojas de Estilo -->
     <link rel="stylesheet" href="css/variables.css">
@@ -22,6 +22,10 @@
         <a href="#inicio" class="nav-float-btn active" title="Inicio">
             <i class="fa-solid fa-house"></i>
             <span class="tooltip">Inicio</span>
+        </a>
+        <a href="#demos" class="nav-float-btn" title="Demos">
+            <i class="fa-solid fa-circle-play"></i>
+            <span class="tooltip">Demos</span>
         </a>
         <a href="#servicios" class="nav-float-btn" title="Servicios">
             <i class="fa-solid fa-layer-group"></i>
@@ -49,16 +53,28 @@
             </p>
             <div class="hero-actions">
                 <a href="#proyectos" class="btn-primary">Ver Trabajos <i class="fa-solid fa-arrow-right"></i></a>
-                <a href="#contacto" class="btn-secondary">Hablemos</a>
             </div>
         </div>
     </header>
+
+    <!-- SECCIÓN CARRUSEL (UBICADA JUSTO ARRIBA DE SERVICIOS) -->
+    <section class="carousel-section" id="demos">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Demos en Vivo</h2>
+                <p class="section-subtitle">Vista previa interactiva de proyectos recientes.</p>
+            </div>
+        
+            <!-- Contenedor dinámico único del Carrusel -->
+            <div class="carousel-wrapper" id="heroCarouselContainer"></div>
+        </div>
+    </section>
 
     <!-- SECCIÓN DE SERVICIOS / SOLUCIONES -->
     <section class="section" id="servicios">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Especialidades & Servicios</h2>
+                <h2 class="section-title">Servicios</h2>
                 <p class="section-subtitle">Soluciones tecnológicas enfocadas en la experiencia de usuario y resultados.</p>
             </div>
             
@@ -82,7 +98,8 @@
                     <p>Experiencia nativa en móviles con carga instantánea y diseño limpio adaptado a la identidad de marca.</p>
                 </div>
             </div>
-        </div¿'0  </section>
+        </div>
+    </section>
 
     <!-- SECCIÓN DE PROYECTOS -->
     <section class="section bg-light" id="proyectos">
@@ -114,8 +131,9 @@
         <p>&copy; 2026 Todos los derechos reservados. Desarrollado por Paulo Glinka.</p>
     </footer>
 
-    <!-- Cargar data.js antes de main.js -->
+    <!-- Carga data.js antes de main.js y carousel.js -->
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/carousel.js"></script>
 </body>
 </html>
