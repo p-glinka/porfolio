@@ -131,7 +131,28 @@
         <p>&copy; 2026 Todos los derechos reservados. Desarrollado por Paulo Glinka.</p>
     </footer>
 
-    <!-- Carga data.js antes de main.js y carousel.js -->
+    <!-- MODAL REPRODUCTOR DE VIDEO MODERNO -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-modal-overlay" id="modalOverlay"></div>
+        <div class="video-modal-content">
+            <button class="video-modal-close" id="modalCloseBtn" aria-label="Cerrar modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="video-modal-media">
+                <video id="modalVideoPlayer" controls autoplay playsinline></video>
+            </div>
+        <div class="video-modal-info">
+            <div class="video-modal-details">
+                <span class="carousel-tag" id="modalCategory">Categoría</span>
+                <h3 id="modalTitle">Título del Proyecto</h3>
+            </div>
+            <a href="#" id="modalProjectLink" target="_blank" rel="noopener" class="btn-primary">
+                Ir al sitio <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            </div>
+        </div>
+    </div>
+    <!-- Cargar data.js antes de main.js y carousel.js -->
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>
     <script src="js/carousel.js"></script>

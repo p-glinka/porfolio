@@ -9,17 +9,16 @@ function renderCarousel(containerId, data) {
     const track = document.createElement('div');
     track.className = 'carousel-track';
 
-    // Para evitar huecos en blanco, duplicamos el array de datos si hay pocas tarjetas
+    // Duplicamos para que el carrusel continuo no tenga vacíos
     const listToRender = data.length < 6 ? [...data, ...data, ...data] : data;
 
     listToRender.forEach(item => {
         const slide = document.createElement('div');
         slide.className = 'carousel-slide';
 
+        // Evento al tocar la tarjeta -> Abrir Modal
         slide.addEventListener('click', () => {
-            if (item.targetUrl && item.targetUrl !== '#') {
-                window.open(item.targetUrl, '_blank', 'noopener,noreferrer');
-            }
+            openVideoModal(item);
         });
 
         const isImageOrGif = item.videoSrc.endsWith('.gif') || 
@@ -36,7 +35,7 @@ function renderCarousel(containerId, data) {
                     ${mediaHTML}
                     <div class="carousel-overlay">
                         <span class="carousel-action-btn">
-                            Ver Proyecto <i class="fa-solid fa-arrow-right"></i>
+                            Ver Proyecto <i class="fa-solid fa-expand"></i>
                         </span>
                     </div>
                 </div>
@@ -52,7 +51,6 @@ function renderCarousel(containerId, data) {
 
     container.appendChild(track);
 
-    // Activar rotación continua sin cortes
     startAutoRotate(track);
 }
 
@@ -66,11 +64,9 @@ function startAutoRotate(track) {
         const gap = 16;
         const shiftAmount = firstChild.getBoundingClientRect().width + gap;
 
-        // Desplazamiento fluido hacia la izquierda
         track.style.transition = 'transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
         track.style.transform = `translateX(-${shiftAmount}px)`;
 
-        // Al finalizar el movimiento, pasamos la tarjeta al final y reseteamos sin parpadeos
         setTimeout(() => {
             track.style.transition = 'none';
             track.appendChild(firstChild);
@@ -80,7 +76,7 @@ function startAutoRotate(track) {
 
     function start() {
         if (!interval) {
-            interval = setInterval(moveNext, 2000); // Avanza cada 2 segundos
+            interval = setInterval(moveNext, 2000);
         }
     }
 
@@ -89,15 +85,66 @@ function startAutoRotate(track) {
         interval = null;
     }
 
-    // Pausar rotación si la persona pone el mouse encima
     track.addEventListener('mouseenter', stop);
     track.addEventListener('mouseleave', start);
 
     start();
 }
 
+/* ==========================================
+   GESTIÓN DEL MODAL FLOTANTE
+   ========================================== */
+function openVideoModal(item) {
+    const modal = document.getElementById('videoModal');
+    const player = document.getElementById('modalVideoPlayer');
+    const category = document.getElementById('modalCategory');
+    const title = document.getElementById('modalTitle');
+    const link = document.getElementById('modalProjectLink');
+
+    if (!modal || !player) return;
+
+    player.src = item.videoSrc;
+    category.textContent = item.category;
+    title.textContent = item.title;
+
+    if (item.targetUrl && item.targetUrl !== '#') {
+        link.href = item.targetUrl;
+        link.style.display = 'inline-flex';
+    } else {
+        link.style.display = 'none';
+    }
+
+    modal.classList.add('active');
+    player.play();
+}
+
+function closeVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const player = document.getElementById('modalVideoPlayer');
+
+    if (!modal) return;
+
+    modal.classList.remove('active');
+    if (player) {
+        player.pause();
+        player.currentTime = 0;
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     if (typeof carouselData !== 'undefined') {
         renderCarousel('heroCarouselContainer', carouselData);
     }
+
+    // Listeners para cerrar el modal
+    const closeBtn = document.getElementById('modalCloseBtn');
+    const overlay = document.getElementById('modalOverlay');
+
+    if (closeBtn) closeBtn.addEventListener('click', closeVideoModal);
+    if (overlay) overlay.addEventListener('click', closeVideoModal);
+
+    // Cerrar con la tecla ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeVideoModal();
+    });
 });
